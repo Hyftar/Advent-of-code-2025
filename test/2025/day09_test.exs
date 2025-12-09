@@ -51,12 +51,24 @@ defmodule Aoc2025.Solutions.Y25.Day09Test do
     assert 24 == solve(input, :part_two)
   end
 
-  # You may also implement a test to validate the part two to ensure that you
-  # did not broke your shared modules when implementing another problem.
+  test "part two edge-case" do
+    input = ~S"""
+    7,1
+    11,1
+    11,8
+    9,8
+    9,5
+    2,5
+    2,3
+    7,3
+    """
 
-  # @part_two_solution CHANGE_ME
-  #
-  # test "part two solution" do
-  #   assert {:ok, @part_two_solution} == AoC.run(2025, 9, :part_two)
-  # end
+    assert 24 == solve(input, :part_two)
+  end
+
+  @part_two_solution 1624057680
+
+  test "part two solution" do
+    assert {:ok, @part_two_solution} == AoC.run(2025, 9, :part_two)
+  end
 end
