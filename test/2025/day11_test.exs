@@ -1,6 +1,6 @@
-defmodule Aoc2025.Solutions.Y25.Day11Test do
+defmodule HyftarAoc.Solutions.Y25.Day11Test do
   alias AoC.Input, warn: false
-  alias Aoc2025.Solutions.Y25.Day11, as: Solution, warn: false
+  alias HyftarAoc.Solutions.Y25.Day11, as: Solution, warn: false
   use ExUnit.Case, async: true
 
   defp solve(input, part) do
@@ -35,17 +35,25 @@ defmodule Aoc2025.Solutions.Y25.Day11Test do
     assert {:ok, @part_one_solution} == AoC.run(2025, 11, :part_one)
   end
 
-  # test "part two example" do
-  #   input = ~S"""
-  #   This is an
-  #   example input.
-  #   replace with
-  #   an example from
-  #   the AoC website.
-  #   """
-  #
-  #   assert CHANGE_ME == solve(input, :part_two)
-  # end
+  test "part two example" do
+    input = ~S"""
+    svr: aaa bbb
+    aaa: fft
+    fft: ccc
+    bbb: tty
+    tty: ccc
+    ccc: ddd eee
+    ddd: hub
+    hub: fff
+    eee: dac
+    dac: fff
+    fff: ggg hhh
+    ggg: out
+    hhh: out
+    """
+
+    assert 2 == solve(input, :part_two)
+  end
 
   # @part_two_solution CHANGE_ME
   #

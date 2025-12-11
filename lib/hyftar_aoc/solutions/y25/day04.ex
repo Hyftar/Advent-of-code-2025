@@ -1,4 +1,4 @@
-defmodule Aoc2025.Solutions.Y25.Day04 do
+defmodule HyftarAoc.Solutions.Y25.Day04 do
   alias AoC.Input
 
   def parse(input, _part) do

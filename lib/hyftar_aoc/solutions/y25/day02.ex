@@ -1,4 +1,4 @@
-defmodule Aoc2025.Solutions.Y25.Day02 do
+defmodule HyftarAoc.Solutions.Y25.Day02 do
   require Integer
   alias AoC.Input
 

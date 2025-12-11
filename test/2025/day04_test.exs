@@ -1,6 +1,6 @@
-defmodule Aoc2025.Solutions.Y25.Day04Test do
+defmodule HyftarAoc.Solutions.Y25.Day04Test do
   alias AoC.Input, warn: false
-  alias Aoc2025.Solutions.Y25.Day04, as: Solution, warn: false
+  alias HyftarAoc.Solutions.Y25.Day04, as: Solution, warn: false
   use ExUnit.Case, async: true
 
   defp solve(input, part) do

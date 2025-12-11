@@ -1,9 +1,9 @@
-defmodule Aoc2025.MixProject do
+defmodule HyftarAoc.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :aoc_2025,
+      app: :hyftar_aoc,
       version: "0.1.0",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
@@ -21,7 +21,8 @@ defmodule Aoc2025.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:aoc, "~> 0.16"}
+      {:aoc, "~> 0.16"},
+      {:memoize, "~> 1.4"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]

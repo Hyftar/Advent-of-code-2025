@@ -19,7 +19,7 @@ erl_crash.dump
 *.log
 
 # Ignore package tarball (built via "mix hex.build").
-aoc_2025-*.tar
+hyftar_aoc-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/*

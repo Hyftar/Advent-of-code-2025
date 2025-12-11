@@ -1,5 +1,7 @@
-defmodule Aoc2025.Solutions.Y25.Day11 do
+defmodule HyftarAoc.Solutions.Y25.Day11 do
   alias AoC.Input
+
+  use Memoize
 
   def parse(input, _part) do
     Input.read!(input)
@@ -44,7 +46,40 @@ defmodule Aoc2025.Solutions.Y25.Day11 do
     |> Enum.sum()
   end
 
-  # def part_two(problem) do
-  #   problem
-  # end
+  def part_two(problem) do
+    memoized_count_paths_part_2("svr", problem)
+  end
+
+  def memoized_count_paths_part_2(current, graph, visited \\ MapSet.new()) do
+    Memoize.Cache.get_or_run(
+      {__MODULE__, :resolve, [current]},
+      fn ->
+        count_paths_part_2(current, graph, visited)
+      end
+    )
+  end
+
+  def count_paths_part_2("out", _graph, visited) do
+    if "dac" in visited and "fft" in visited do
+      1
+    else
+      0
+    end
+  end
+
+  def count_paths_part_2(current, graph, visited) do
+    visited = MapSet.put(visited, current)
+
+    Map.get(graph, current)
+    |> Enum.map(
+      fn next ->
+        if MapSet.member?(visited, next) do
+          0
+        else
+          count_paths_part_2(next, graph, visited)
+        end
+      end
+    )
+    |> Enum.sum()
+  end
 end

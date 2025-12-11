@@ -1,3 +1,3 @@
-# Advent of code 2025
+# Hyftar's Advent of code solutions
 
-My personnal solutions for advent of code 2025
+My personnal solutions for the advent of code, written in Elixir.
