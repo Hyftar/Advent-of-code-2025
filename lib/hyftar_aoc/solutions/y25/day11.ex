@@ -7,13 +7,11 @@ defmodule HyftarAoc.Solutions.Y25.Day11 do
     Input.read!(input)
     |> String.split("\n", trim: true)
     |> Enum.map(&String.split(&1, ": "))
-    |> Enum.map(
-      fn [input, output] ->
-        output
-        |> String.split(" ")
-        |> then(fn output -> {input, output} end)
-      end
-    )
+    |> Enum.map(fn [input, output] ->
+      output
+      |> String.split(" ")
+      |> then(fn output -> {input, output} end)
+    end)
     |> Enum.into(%{})
   end
 
@@ -31,7 +29,9 @@ defmodule HyftarAoc.Solutions.Y25.Day11 do
 
   defmemo count_paths(current, graph, exit, visited_dac, visited_fft) do
     Map.get(graph, current, [])
-    |> Enum.map(&count_paths(&1, graph, exit, visited_dac || &1 == "dac", visited_fft || &1 == "fft"))
+    |> Enum.map(
+      &count_paths(&1, graph, exit, visited_dac || &1 == "dac", visited_fft || &1 == "fft")
+    )
     |> Enum.sum()
   end
 end
